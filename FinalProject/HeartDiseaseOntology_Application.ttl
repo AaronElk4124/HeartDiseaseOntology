@@ -10,7 +10,7 @@
 <https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_application> rdf:type owl:Ontology ;
                                                                                owl:imports <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/2019-08-29/ROImport> ,
                                                                                            <https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference> ;
-                                                                               <http://purl.obolibrary.org/obo/IAO_0000115> "An application ontology extending the Heart Disease Reference Ontology with classes and axioms specific to the UCI Cleveland Heart Disease Dataset. Enables queries such as: given a patient clinical profile, identify matching patients and their heart disease diagnosis outcomes." ;
+                                                                               <http://purl.obolibrary.org/obo/IAO_0000115> "An application ontology extending the Heart Disease Reference Ontology with classes and axioms specific to the UCI Cleveland Heart Disease Dataset. Serves to enable queries among the 303 patients in this dataset and provide clinical insight." ;
                                                                                rdfs:label "Heart Disease Application Ontology"@en .
 
 #################################################################
@@ -140,10 +140,6 @@ ref:jhu-0000190 :jhu-0000226 "\"oldpeak\"" .
              rdfs:seeAlso "https://www.semanticscholar.org/paper/International-application-of-a-new-probability-for-Detrano-J%C3%A1nosi/a7d714f8f87bfc41351eb5ae1e5472f0ebbe0574" .
 
 
-###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000162
-ref:jhu-0000162 :jhu-0000226 "\"num=0\"" .
-
-
 ###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000164
 ref:jhu-0000164 :jhu-0000226 "\"num\"" .
 
@@ -181,6 +177,9 @@ ref:jhu-0000201 :jhu-0000226 "\"thal\"" .
 #################################################################
 
 ref:jhu-0000161 :jhu-0000226 "\"num=1\"" .
+
+
+ref:jhu-0000162 :jhu-0000226 "\"num=0\"" .
 
 
 ref:jhu-0000168 :jhu-0000226 "\"restecg=0\"" .
