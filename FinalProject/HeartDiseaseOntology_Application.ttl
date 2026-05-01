@@ -1,0 +1,243 @@
+@prefix : <https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_application/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ref: <https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_application/> .
+
+<https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_application> rdf:type owl:Ontology ;
+                                                                               owl:imports <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/2019-08-29/ROImport> ,
+                                                                                           <https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference> ;
+                                                                               <http://purl.obolibrary.org/obo/IAO_0000115> "An application ontology extending the Heart Disease Reference Ontology with classes and axioms specific to the UCI Cleveland Heart Disease Dataset. Enables queries such as: given a patient clinical profile, identify matching patients and their heart disease diagnosis outcomes." ;
+                                                                               rdfs:label "Heart Disease Application Ontology"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_application/jhu-0000226
+:jhu-0000226 rdf:type owl:AnnotationProperty ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "A cross-reference to the corresponding attribute name in the UCI Cleveland Heart Disease Dataset" ;
+             rdfs:label "uci_cross_reference"@en ;
+             rdfs:seeAlso "https://archive.ics.uci.edu/dataset/45/heart+disease" ;
+             rdfs:subPropertyOf <http://www.geneontology.org/formats/oboInOwl#hasDbXref> .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.obolibrary.org/obo/RO_0000057
+<http://purl.obolibrary.org/obo/RO_0000057> rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000172
+ref:jhu-0000172 :jhu-0000226 "\"age\"" .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000180
+ref:jhu-0000180 :jhu-0000226 "\"trestbps\"" .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000181
+ref:jhu-0000181 :jhu-0000226 "\"chol\"" .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000185
+ref:jhu-0000185 :jhu-0000226 "\"thalach\"" .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000190
+ref:jhu-0000190 :jhu-0000226 "\"oldpeak\"" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_application/jhu-0000160
+:jhu-0000160 rdf:type owl:Class ;
+             owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Class ;
+                                                          owl:unionOf ( ref:jhu-0000173
+                                                                        ref:jhu-0000174
+                                                                      )
+                                                        ]
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty ref:jhu-0000156 ;
+                                                          owl:someValuesFrom ref:jhu-0000164
+                                                        ]
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty ref:jhu-0000217 ;
+                                                          owl:someValuesFrom <http://purl.obolibrary.org/obo/SYMP_0000576>
+                                                        ]
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty ref:jhu-0000217 ;
+                                                          owl:someValuesFrom ref:jhu-0000186
+                                                        ]
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty ref:jhu-0000224 ;
+                                                          owl:someValuesFrom ref:jhu-0000165
+                                                        ]
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty ref:jhu-0000224 ;
+                                                          owl:someValuesFrom ref:jhu-0000167
+                                                        ]
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty ref:jhu-0000224 ;
+                                                          owl:someValuesFrom ref:jhu-0000182
+                                                        ]
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty ref:jhu-0000224 ;
+                                                          owl:someValuesFrom ref:jhu-0000196
+                                                        ]
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty ref:jhu-0000224 ;
+                                                          owl:someValuesFrom ref:jhu-0000201
+                                                        ]
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty ref:jhu-0000172 ;
+                                                          owl:someValuesFrom xsd:integer
+                                                        ]
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty ref:jhu-0000180 ;
+                                                          owl:someValuesFrom xsd:integer
+                                                        ]
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty ref:jhu-0000181 ;
+                                                          owl:someValuesFrom xsd:integer
+                                                        ]
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty ref:jhu-0000185 ;
+                                                          owl:someValuesFrom xsd:integer
+                                                        ]
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty ref:jhu-0000190 ;
+                                                          owl:someValuesFrom xsd:decimal
+                                                        ]
+                                                      ) ;
+                                   rdf:type owl:Class
+                                 ] ;
+             rdfs:subClassOf ref:jhu-0000159 ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "A patient who participated in the Cleveland Clinic Heart Disease Study, whose clinical measurements are recorded in the UCI Heart Disease Dataset." ;
+             rdfs:label "patient in heart disease study"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_application/jhu-0000216
+:jhu-0000216 rdf:type owl:Class ;
+             owl:equivalentClass [ rdf:type owl:Restriction ;
+                                   owl:onProperty <http://purl.obolibrary.org/obo/RO_0000057> ;
+                                   owl:someValuesFrom :jhu-0000160
+                                 ] ;
+             rdfs:subClassOf ref:jhu-0000215 ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "A clinical study conducted at the Cleveland Clinic in 1989 that collected clinical measurements from patients to assess the presence or absence of heart disease" ;
+             rdfs:label "cleveland heart disease study"@en ;
+             rdfs:seeAlso "https://www.semanticscholar.org/paper/International-application-of-a-new-probability-for-Detrano-J%C3%A1nosi/a7d714f8f87bfc41351eb5ae1e5472f0ebbe0574" .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000162
+ref:jhu-0000162 :jhu-0000226 "\"num=0\"" .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000164
+ref:jhu-0000164 :jhu-0000226 "\"num\"" .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000167
+ref:jhu-0000167 :jhu-0000226 "\"restecg\"" .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000173
+ref:jhu-0000173 :jhu-0000226 "\"sex=1\"" .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000174
+ref:jhu-0000174 :jhu-0000226 "\"sex=0\"" .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000182
+ref:jhu-0000182 :jhu-0000226 "\"fbs\"" .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000186
+ref:jhu-0000186 :jhu-0000226 "\"exang\"" .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000196
+ref:jhu-0000196 :jhu-0000226 "\"ca\"" .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000201
+ref:jhu-0000201 :jhu-0000226 "\"thal\"" .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+ref:jhu-0000161 :jhu-0000226 "\"num=1\"" .
+
+
+ref:jhu-0000168 :jhu-0000226 "\"restecg=0\"" .
+
+
+ref:jhu-0000169 :jhu-0000226 "\"restecg=2\"" .
+
+
+ref:jhu-0000171 :jhu-0000226 "\"restecg=1\"" .
+
+
+ref:jhu-0000176 :jhu-0000226 "\"cp=1\"" .
+
+
+ref:jhu-0000177 :jhu-0000226 "\"cp=2\"" .
+
+
+ref:jhu-0000178 :jhu-0000226 "\"cp=3\"" .
+
+
+ref:jhu-0000179 :jhu-0000226 "\"cp=4\"" .
+
+
+ref:jhu-0000183 :jhu-0000226 "\"fbs=1\"" .
+
+
+ref:jhu-0000184 :jhu-0000226 "\"fbs=0\"" .
+
+
+ref:jhu-0000187 :jhu-0000226 "\"exang=1\"" .
+
+
+ref:jhu-0000188 :jhu-0000226 "\"exang=0\"" .
+
+
+ref:jhu-0000191 :jhu-0000226 "\"slope\"" .
+
+
+ref:jhu-0000193 :jhu-0000226 "\"slope=2\"" .
+
+
+ref:jhu-0000194 :jhu-0000226 "\"slope=1\"" .
+
+
+ref:jhu-0000195 :jhu-0000226 "\"slope=3\"" .
+
+
+ref:jhu-0000199 :jhu-0000226 "\"ca\"" .
+
+
+ref:jhu-0000202 :jhu-0000226 "\"thal=3\"" .
+
+
+ref:jhu-0000203 :jhu-0000226 "\"thal=6\"" .
+
+
+ref:jhu-0000205 :jhu-0000226 "\"thal=7\"" .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi

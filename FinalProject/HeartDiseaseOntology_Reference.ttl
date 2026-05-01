@@ -1,0 +1,570 @@
+@prefix : <https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/> .
+
+<https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference> rdf:type owl:Ontology ;
+                                                                             owl:imports <http://purl.obolibrary.org/obo/bfo/2019-08-26/bfo.owl> ,
+                                                                                         <http://purl.obolibrary.org/obo/doid/releases/2026-03-31/doid-non-classified.owl> ,
+                                                                                         <http://purl.obolibrary.org/obo/doid/releases/2026-03-31/doid.owl> ,
+                                                                                         <http://www.ontologyrepository.com/CommonCoreOntologies/Upper/2019-08-29/ROImport> ;
+                                                                             <http://purl.obolibrary.org/obo/IAO_0000115> "A reference ontology providing reusable classes and properties for representing clinical data, diagnostic tests, and patient information in the context of heart disease research." ;
+                                                                             rdfs:label "Heart Disease Reference Ontology"@en .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.obolibrary.org/obo/RO_0000056
+<http://purl.obolibrary.org/obo/RO_0000056> rdf:type owl:ObjectProperty .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000156
+:jhu-0000156 rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             owl:inverseOf :jhu-0000223 ;
+             rdfs:domain :jhu-0000159 ;
+             rdfs:range :jhu-0000155 ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "Relates a patient to a clinical conclusion about the presence or absence of a disease" ;
+             rdfs:label "has diagnosis"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000217
+:jhu-0000217 rdf:type owl:ObjectProperty ;
+             rdfs:domain :jhu-0000159 ;
+             rdfs:range <http://purl.obolibrary.org/obo/SYMP_0000462> ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "Relates a patient to a symptom they experience" ;
+             rdfs:label "has symptom"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000218
+:jhu-0000218 rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0003000> ;
+             owl:inverseOf :jhu-0000222 ;
+             rdfs:domain :jhu-0000158 ;
+             rdfs:range :jhu-0000163 ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "Relates a diagnostic test to the result it produces" ;
+             rdfs:label "has test result"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000222
+:jhu-0000222 rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0003001> ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "inverse of has test result" ;
+             rdfs:label "is test result of"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000223
+:jhu-0000223 rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "inverse of has diagnosis" ;
+             rdfs:label "diagnosed in"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000224
+:jhu-0000224 rdf:type owl:ObjectProperty ;
+             rdfs:domain :jhu-0000159 ;
+             rdfs:range :jhu-0000163 ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "Relates a patient to a diagnostic test result performed during a clinical study" ;
+             rdfs:label "has clinical result"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000172
+:jhu-0000172 rdf:type owl:DatatypeProperty ;
+             rdfs:domain :jhu-0000159 ;
+             rdfs:range xsd:integer ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "Age in years of an individual" ;
+             rdfs:label "has age"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000180
+:jhu-0000180 rdf:type owl:DatatypeProperty ;
+             rdfs:domain :jhu-0000159 ;
+             rdfs:range xsd:integer ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "Resting blood pressure (in mm Hg on admission to the hospital)" ;
+             rdfs:label "has resting blood pressure"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000181
+:jhu-0000181 rdf:type owl:DatatypeProperty ;
+             rdfs:domain :jhu-0000159 ;
+             rdfs:range xsd:integer ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "Serum cholestoral in mg/dl" ;
+             rdfs:label "has cholesterol"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000185
+:jhu-0000185 rdf:type owl:DatatypeProperty ;
+             rdfs:domain :jhu-0000159 ;
+             rdfs:range xsd:integer ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "The maximum heart rate an individual reaches during a stress test" ;
+             rdfs:label "has maximum heart rate achieved"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000190
+:jhu-0000190 rdf:type owl:DatatypeProperty ;
+             rdfs:domain :jhu-0000159 ;
+             rdfs:range xsd:decimal ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "Decimal value indicating the amount the ST (S wave to T wave) segment drops on an electrocardiogram during excercise compared to rest" ;
+             rdfs:label "has ST depression"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000199
+:jhu-0000199 rdf:type owl:DatatypeProperty ;
+             rdfs:domain :jhu-0000196 ;
+             rdfs:range xsd:integer ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "Integer value from 0-3 indicating number of major vessels as colored by flurosopy test" ;
+             rdfs:label "has major vessel count"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.obolibrary.org/obo/UBERON_0000948
+<http://purl.obolibrary.org/obo/UBERON_0000948> owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty <http://purl.obolibrary.org/obo/BFO_0000051> ;
+                                                                      owl:someValuesFrom :jhu-0000198
+                                                                    ] .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000153
+:jhu-0000153 rdf:type owl:Class ;
+             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000031> ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "A generically dependent continuant that is about some thing." ;
+             rdfs:isDefinedBy "http://purl.obolibrary.org/obo/IAO_0000030" ;
+             rdfs:label "information content entity"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000154
+:jhu-0000154 rdf:type owl:Class ;
+             rdfs:subClassOf :jhu-0000153 ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "A data item that is about a patient and is the specified output of a health care process assay or diagnostic process" ;
+             rdfs:isDefinedBy "http://purl.obolibrary.org/obo/OGMS_0000123" ;
+             rdfs:label "clinical data item"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000155
+:jhu-0000155 rdf:type owl:Class ;
+             rdfs:subClassOf :jhu-0000154 ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "An information content entity representing a clinical conclusion about the presence or absence of a disease in a patient." ;
+             rdfs:label "diagnosis"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000158
+:jhu-0000158 rdf:type owl:Class ;
+             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000015> ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "A process performed on a patient to gather clinical information used in the diagnosis or monitoring of disease" ;
+             rdfs:label "diagnostic test"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000159
+:jhu-0000159 rdf:type owl:Class ;
+             rdfs:subClassOf :jhu-0000212 ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "A human being who is the subject of a clinical examination or medical study" ;
+             rdfs:label "patient"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000161
+:jhu-0000161 rdf:type owl:Class ;
+             owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                          owl:onProperty <http://purl.obolibrary.org/obo/RO_0000053> ;
+                                                          owl:someValuesFrom <http://purl.obolibrary.org/obo/DOID_114>
+                                                        ]
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty <http://purl.obolibrary.org/obo/RO_0000053> ;
+                                                          owl:someValuesFrom :jhu-0000234
+                                                        ]
+                                                      ) ;
+                                   rdf:type owl:Class
+                                 ] ;
+             rdfs:subClassOf :jhu-0000164 ;
+             owl:disjointWith :jhu-0000162 ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "Diagnosis of heart disease indicating greater than 50% diameter narrowing as described in the Cleveland Heart Disease Study" ;
+             rdfs:label "heart disease present"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000162
+:jhu-0000162 rdf:type owl:Class ;
+             owl:equivalentClass [ rdf:type owl:Restriction ;
+                                   owl:onProperty <http://purl.obolibrary.org/obo/RO_0000053> ;
+                                   owl:someValuesFrom :jhu-0000235
+                                 ] ;
+             rdfs:subClassOf :jhu-0000164 ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "Diagnosis of heart disease indicating less than 50% diameter narrowing as described in the Cleveland Heart Disease Study" ;
+             rdfs:label "heart disease absent"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000163
+:jhu-0000163 rdf:type owl:Class ;
+             rdfs:subClassOf :jhu-0000154 ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "An information content entity representing the outcome of a diagnostic test performed on a patient." ;
+             rdfs:label "diagnostic test result"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000164
+:jhu-0000164 rdf:type owl:Class ;
+             owl:equivalentClass [ rdf:type owl:Restriction ;
+                                   owl:onProperty <http://purl.obolibrary.org/obo/RO_0003001> ;
+                                   owl:someValuesFrom :jhu-0000232
+                                 ] ;
+             rdfs:subClassOf :jhu-0000155 ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "A diagnosis confirming the presence or absence of obstructive coronary artery disease. Commonly diagnosed with a coronary angiography test" ;
+             rdfs:label "heart disease diagnosis"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000165
+:jhu-0000165 rdf:type owl:Class ;
+             rdfs:subClassOf :jhu-0000163 ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "The result of an excersise stress diagnostic test" ;
+             rdfs:label "stress test result"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000167
+:jhu-0000167 rdf:type owl:Class ;
+             rdfs:subClassOf :jhu-0000163 ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "The result of a resting electrocardiogram test result" ;
+             rdfs:label "resting electrocardiogram test result"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000168
+:jhu-0000168 rdf:type owl:Class ;
+             rdfs:subClassOf :jhu-0000167 ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "Normal readings produced from an electrocardiogram test" ;
+             rdfs:label "normal electrocardiogram"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000169
+:jhu-0000169 rdf:type owl:Class ;
+             rdfs:subClassOf :jhu-0000167 ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "T wave inversions and/or ST elevation or depression of > 0.05 mV as deduced by a resting electrocardiogram test" ;
+             rdfs:label "ST-T wave abnormality"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000171
+:jhu-0000171 rdf:type owl:Class ;
+             rdfs:subClassOf :jhu-0000167 ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "A resting electrocardiographic result showing probable or definite left ventricular hypertrophy" ;
+             rdfs:label "probable or definite left ventricular hypertrophy"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000173
+:jhu-0000173 rdf:type owl:Class ;
+             rdfs:subClassOf :jhu-0000159 ;
+             owl:disjointWith :jhu-0000174 ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "A patient that has XY chromosomes" ;
+             rdfs:label "male patient"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000174
+:jhu-0000174 rdf:type owl:Class ;
+             rdfs:subClassOf :jhu-0000159 ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "A patient that has XX chromosomes" ;
+             rdfs:label "female patient"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000176
+:jhu-0000176 rdf:type owl:Class ;
+             rdfs:subClassOf <http://purl.obolibrary.org/obo/SYMP_0000576> ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "A chest pain type characterized by substernal discomfort provoked by exertion or emotional stress and relieved by rest" ;
+             rdfs:label "typical angina"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000177
+:jhu-0000177 rdf:type owl:Class ;
+             rdfs:subClassOf <http://purl.obolibrary.org/obo/SYMP_0000576> ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "A chest pain type that does not meet all the classic criteria for typical angina" ;
+             rdfs:label "atypical angina"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000178
+:jhu-0000178 rdf:type owl:Class ;
+             rdfs:subClassOf <http://purl.obolibrary.org/obo/SYMP_0000576> ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "A chest pain type that is not consistent with angina pectoris" ;
+             rdfs:label "non-anginal pain"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000179
+:jhu-0000179 rdf:type owl:Class ;
+             rdfs:subClassOf <http://purl.obolibrary.org/obo/SYMP_0000576> ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "A chest pain classification indicating the patient reports no chest pain symptoms" ;
+             rdfs:label "asymptomatic"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000182
+:jhu-0000182 rdf:type owl:Class ;
+             rdfs:subClassOf :jhu-0000163 ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "The result of a fasting blood sugar diagnostic test" ;
+             rdfs:label "fasting blood sugar result"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000183
+:jhu-0000183 rdf:type owl:Class ;
+             rdfs:subClassOf :jhu-0000182 ;
+             owl:disjointWith :jhu-0000184 ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "Fasting blood sugar result showing fasting blood sugar > 120 mg/dl" ;
+             rdfs:label "elevated blood sugar"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000184
+:jhu-0000184 rdf:type owl:Class ;
+             rdfs:subClassOf :jhu-0000182 ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "Fasting blood sugar result showing fasting blood sugar <= 120 mg/dl" ;
+             rdfs:label "normal blood sugar"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000186
+:jhu-0000186 rdf:type owl:Class ;
+             rdfs:subClassOf <http://purl.obolibrary.org/obo/SYMP_0000576> ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "chest pain that may occur during physical excercise" ;
+             rdfs:label "exercise induced angina"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000187
+:jhu-0000187 rdf:type owl:Class ;
+             rdfs:subClassOf :jhu-0000186 ;
+             owl:disjointWith :jhu-0000188 ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "Indicated angina occuring physical excercise" ;
+             rdfs:label "exercise induced angina present"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000188
+:jhu-0000188 rdf:type owl:Class ;
+             rdfs:subClassOf :jhu-0000186 ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "Indicates no angina occuring during physical excecise" ;
+             rdfs:label "exercise induced angina absent"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000191
+:jhu-0000191 rdf:type owl:Class ;
+             rdfs:subClassOf :jhu-0000165 ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "The result of a ST slope stress diagnostic test" ;
+             rdfs:label "ST slope test result"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000193
+:jhu-0000193 rdf:type owl:Class ;
+             rdfs:subClassOf :jhu-0000191 ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "A ST test result in which the ST segment remains level at peak exercise" ;
+             rdfs:label "flat ST slope test result"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000194
+:jhu-0000194 rdf:type owl:Class ;
+             rdfs:subClassOf :jhu-0000191 ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "A ST test result in which the ST segment rises at peak exercise" ;
+             rdfs:label "upsloping ST slope test result"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000195
+:jhu-0000195 rdf:type owl:Class ;
+             rdfs:subClassOf :jhu-0000191 ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "A ST test result in which the ST segment falls at peak exercise" ;
+             rdfs:label "downsloping ST slope test result"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000196
+:jhu-0000196 rdf:type owl:Class ;
+             rdfs:subClassOf :jhu-0000163 ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "The result of a fluoroscopy diagnostic test" ;
+             rdfs:label "fluoroscopy test result"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000198
+:jhu-0000198 rdf:type owl:Class ;
+             owl:equivalentClass [ rdf:type owl:Restriction ;
+                                   owl:onProperty <http://purl.obolibrary.org/obo/RO_0000056> ;
+                                   owl:someValuesFrom :jhu-0000208
+                                 ] ;
+             rdfs:subClassOf <http://purl.obolibrary.org/obo/UBERON_0000948> ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "A principal artery of the heart that supplies oxygenated blood to the heart muscle, examined during a fluoroscopy test" ;
+             rdfs:label "major coronary vessel"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000201
+:jhu-0000201 rdf:type owl:Class ;
+             rdfs:subClassOf :jhu-0000165 ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "The result of a thallium scan stress diagnostic test" ;
+             rdfs:label "thallium scan test result"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000202
+:jhu-0000202 rdf:type owl:Class ;
+             rdfs:subClassOf :jhu-0000201 ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "A thallium scan result indicating normal blood flow to the heart muscle with no perfusion defects detected" ;
+             rdfs:label "normal thallium"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000203
+:jhu-0000203 rdf:type owl:Class ;
+             rdfs:subClassOf :jhu-0000201 ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "A thallium scan result indicating a permanent reduction in blood flow to an area of the heart muscle" ;
+             rdfs:label "fixed defect thallium"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000205
+:jhu-0000205 rdf:type owl:Class ;
+             rdfs:subClassOf :jhu-0000201 ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "A thallium scan result indicating a reduction in blood flow to an area of the heart muscle during stress that returns to normal at rest" ;
+             rdfs:label "reversible defect thallium"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000206
+:jhu-0000206 rdf:type owl:Class ;
+             owl:equivalentClass [ rdf:type owl:Restriction ;
+                                   owl:onProperty :jhu-0000218 ;
+                                   owl:someValuesFrom :jhu-0000201
+                                 ] ;
+             rdfs:subClassOf :jhu-0000210 ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "A stress test result that describes the state of blood flow to the heart muscle, recorded as normal, fixed defect, or reversible defect." ;
+             rdfs:label "thallium scan test"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000207
+:jhu-0000207 rdf:type owl:Class ;
+             owl:equivalentClass [ rdf:type owl:Restriction ;
+                                   owl:onProperty :jhu-0000218 ;
+                                   owl:someValuesFrom :jhu-0000182
+                                 ] ;
+             rdfs:subClassOf :jhu-0000158 ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "A diagnostic test that measures blood glucose levels after not eating or drinking (except water) for at least 8 hours" ;
+             rdfs:label "fasting blood sugar test"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000208
+:jhu-0000208 rdf:type owl:Class ;
+             owl:equivalentClass [ rdf:type owl:Restriction ;
+                                   owl:onProperty :jhu-0000218 ;
+                                   owl:someValuesFrom :jhu-0000196
+                                 ] ;
+             rdfs:subClassOf :jhu-0000158 ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "A diagnostic test that uses X-rays to show internal organs and tissues working in real time. Providers use fluoroscopy to diagnose issues with your organs or help guide them while performing medical procedures." ;
+             rdfs:label "fluoroscopy test"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000209
+:jhu-0000209 rdf:type owl:Class ;
+             owl:equivalentClass [ rdf:type owl:Restriction ;
+                                   owl:onProperty :jhu-0000218 ;
+                                   owl:someValuesFrom :jhu-0000167
+                                 ] ;
+             rdfs:subClassOf :jhu-0000158 ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "A diagnostic test that records the heart's electrical activity while the patient lies still. It uses 12 electrodes on the chest, arms, and legs to detect heart rhythm issues, damage, and structural abnormalities." ;
+             rdfs:label "resting electrocardigram test"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000210
+:jhu-0000210 rdf:type owl:Class ;
+             owl:equivalentClass [ rdf:type owl:Restriction ;
+                                   owl:onProperty :jhu-0000218 ;
+                                   owl:someValuesFrom :jhu-0000165
+                                 ] ;
+             rdfs:subClassOf :jhu-0000158 ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "A diagnostic test in which a patient undergoes controlled physical exertion while cardiac activity is monitored." ;
+             rdfs:label "stress test"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000211
+:jhu-0000211 rdf:type owl:Class ;
+             owl:equivalentClass [ rdf:type owl:Restriction ;
+                                   owl:onProperty :jhu-0000218 ;
+                                   owl:someValuesFrom :jhu-0000191
+                                 ] ;
+             rdfs:subClassOf :jhu-0000210 ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "A stress test result that describes the shape of the ST segment at peak exercise, recorded as upsloping, flat, or downsloping" ;
+             rdfs:label "ST slope test"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000212
+:jhu-0000212 rdf:type owl:Class ;
+             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000030> ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "A member of the species Homo sapiens." ;
+             rdfs:label "human being"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000215
+:jhu-0000215 rdf:type owl:Class ;
+             rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000015> ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "Studies in which research is conducted with human subjects or on material of human origin in which the investigator directly interacts with human subjects, including the dveelopment of new technologies, understanding of the mechanisms of disease, therapy, clinical trials, epidemiology behaviours and health services research" ;
+             rdfs:isDefinedBy "http://purl.obolibrary.org/obo/RBO_00002017" ;
+             rdfs:label "clinical study"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000232
+:jhu-0000232 rdf:type owl:Class ;
+             owl:equivalentClass [ rdf:type owl:Restriction ;
+                                   owl:onProperty :jhu-0000218 ;
+                                   owl:someValuesFrom :jhu-0000233
+                                 ] ;
+             rdfs:subClassOf :jhu-0000158 ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "A specialized, minimally invasive X-ray procedure used to visualize how blood flows through the heart's arteries, identifying blockages or narrowing caused by buildup. Commonly used to diagnose heart disease" ;
+             rdfs:label "coronary angiography test"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000233
+:jhu-0000233 rdf:type owl:Class ;
+             rdfs:subClassOf :jhu-0000163 ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "The result of a coronary angiography diagnostic test" ;
+             rdfs:label "coronary angiography test result"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000234
+:jhu-0000234 rdf:type owl:Class ;
+             rdfs:subClassOf :jhu-0000233 ;
+             owl:disjointWith :jhu-0000235 ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "A coronary angiography result indicating greater than 50% narrowing of a major coronary artery, commonly used to confirm the presence of heart disease" ;
+             rdfs:label "greater than 50% diameter narrowing result"@en .
+
+
+###  https://ontology.jhu.edu/aaronelkin/2026/3/HeartDiseaseOntology_reference/jhu-0000235
+:jhu-0000235 rdf:type owl:Class ;
+             rdfs:subClassOf :jhu-0000233 ;
+             <http://purl.obolibrary.org/obo/IAO_0000115> "A coronary angiography result indicating less than 50% narrowing of all major coronary arteries, commonly used to confirm the absence of obstructive heart disease" ;
+             rdfs:label "less than 50% diameter narrowing result"@en .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :jhu-0000168
+                :jhu-0000169
+                :jhu-0000171
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :jhu-0000176
+                :jhu-0000177
+                :jhu-0000178
+                :jhu-0000179
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :jhu-0000193
+                :jhu-0000194
+                :jhu-0000195
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :jhu-0000202
+                :jhu-0000203
+                :jhu-0000205
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
